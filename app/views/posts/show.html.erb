@@ -1,0 +1,6 @@
+<h3>This is a show file which will show each post</h3>
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<%= link_to "Back to index", posts_path %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure"}%>

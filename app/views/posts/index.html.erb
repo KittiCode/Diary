@@ -1,0 +1,23 @@
+<h1>All Posts</h1>
+<h2 id="month">
+	<%= link_to "<",date: @date.prev_month %>
+	<%= @date.strftime("%B %Y") %>
+	<%= link_to ">", date: @date.next_month %>
+</h2>
+<div id="posts">
+	
+	<%= calendar @date do |date| %>
+	<%= date.day %>
+
+	<% if @posts_by_date[date] %>
+	<ul>
+		<% @posts_by_date[date]	.each do |post| %>
+		<li><%= link_to post.title, post, id: "post" %></li>
+		<% end %>
+	</ul>
+	<% end %>
+	
+	<% end %>
+</div>
+
+<%= link_to "Add New Post", new_post_path %>

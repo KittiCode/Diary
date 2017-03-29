@@ -1,0 +1,26 @@
+<h1>This is a page for adding New post</h1>
+
+<!-- <form action="/post" method="POST">
+</form> -->
+<%= form_for(@post) do |f|%>
+	<div>
+		<%=f.label :title%>
+		<%=f.text_field :title%>
+	</div>
+
+	<div>
+		<%=f.label :content%>
+		<%=f.text_area :content%>
+	</div>
+
+	<div>
+		<%= f.label :published_on %><br>
+		<%= f.date_select :published_on %>
+	</div>
+
+	<!-- Remember that @post = Post.new -->
+	<div>
+		<%= submit_tag "Add" %> 
+	</div>
+<% end %>
+<!-- Check out routes file -->
